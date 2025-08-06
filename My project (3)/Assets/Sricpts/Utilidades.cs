@@ -19,37 +19,16 @@ public class Utilidades : MonoBehaviour
         public List<Puntos2D> datos;
     }
 
-    // Listas públicas para asignar desde el inspector o inicializar aquí
-    public List<Estudiante> estudiantes = new List<Estudiante>();
-    public List<Puntos2D> puntos2D = new List<Puntos2D>();
+    // Listas estáticas para que otras clases puedan agregar datos
+    public static List<Estudiante> estudiantes = new List<Estudiante>();
+    public static List<Puntos2D> puntos2D = new List<Puntos2D>();
 
-    // Este método se ejecuta automáticamente al iniciar el GameObject
-    void Start()
-    {
-        // Ejemplo de inicialización de datos (puedes quitar esto si asignas desde el inspector)
-        if (puntos2D.Count == 0)
-        {
-            puntos2D.Add(new Puntos2D(11.7, 22.4));
-            puntos2D.Add(new Puntos2D(31.8, 19.3));
-            puntos2D.Add(new Puntos2D(1.9, 0.0));
-            puntos2D.Add(new Puntos2D(-32.4, 15.8));
-        }
-
-        if (estudiantes.Count == 0)
-        {
-            estudiantes.Add(new Estudiante("001", "Ingeniería", "Juan", "juan@mail.com", "Calle 1"));
-            estudiantes.Add(new Estudiante("002", "Matemáticas", "Ana", "ana@mail.com", "Calle 2"));
-        }
-
-        ExportarAlumnos(estudiantes);
-        ExportarCoordenadas(puntos2D);
-    }
-
-    public void ExportarAlumnos(List<Estudiante> entrada, string archivoSalida = "datos_alumnos.json")
+    // Puedes llamar estos métodos desde cualquier clase
+    public static void ExportarAlumnos(string archivoSalida = "datos_alumnos.json")
     {
         Debug.Log("ExportarAlumnos ejecutado");
         RegistroDeAlumnos paquete = new RegistroDeAlumnos();
-        paquete.contenido = entrada;
+        paquete.contenido = estudiantes;
 
         string jsonFinal = JsonUtility.ToJson(paquete, true);
         string destino = Application.persistentDataPath + "/" + archivoSalida;
@@ -58,10 +37,10 @@ public class Utilidades : MonoBehaviour
         Debug.Log("Archivo guardado en: " + destino);
     }
 
-    public void ExportarCoordenadas(List<Puntos2D> entrada, string archivoSalida = "datos_puntos.json")
+    public static void ExportarCoordenadas(string archivoSalida = "datos_puntos.json")
     {
         RegistroDePuntos paquete = new RegistroDePuntos();
-        paquete.datos = entrada;
+        paquete.datos = puntos2D;
 
         string jsonFinal = JsonUtility.ToJson(paquete, true);
         string destino = Application.persistentDataPath + "/" + archivoSalida;

@@ -8,8 +8,8 @@ namespace Packages2D{
     [Serializable]
     public class Puntos2D
     {
-        private double x;
-        private double y;
+        [SerializeField] private double x;
+        [SerializeField] private double y;
 
         public Puntos2D(double x, double y)
         {
