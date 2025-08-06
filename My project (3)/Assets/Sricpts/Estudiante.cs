@@ -9,20 +9,25 @@ namespace PackagePersona
     public class Estudiante : Persona
     {
 
-        private string carrera;
-        private string codigo;
+        private string codeE;
+        private string nameCarrera;
 
         public Estudiante()
         {
         }
 
-        public Estudiante(string carrera, string codigo,string nombreP, string mail, string dirP) : base (nombreP, mail, dirP) 
+        public Estudiante(string codeE, string nameCarrera, string nameP, string mail, string dirP)
+        : base(nameP, mail, dirP)
         {
-            this.carrera = carrera;
-            this.codigo = codigo;
+
+            this.codeE = codeE;
+            this.nameCarrera = nameCarrera;
+
         }
 
-        public string Carrera { get => carrera; set => carrera = value; }
-        public string Codigo { get => codigo; set => codigo = value; }
+        public string Codigo { get => codeE; set => codeE = value; }
+        public string Carrera { get => nameCarrera; set => nameCarrera = value; }
     }
+
 }
+

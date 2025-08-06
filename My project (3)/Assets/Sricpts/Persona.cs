@@ -8,23 +8,16 @@ namespace PackagePersona
     [Serializable]
     public class Persona
     {
-
         private string nameP;
         private string mail;
         private string dirP;
 
         public Persona()
-
         {
+
         }
 
-        public Persona(string nombreP, string mail, string dirP)
-        {
-            this.mail = mail;
-            this.dirP = dirP;
-        }
-
-        public Persona(string nameP, string mail, string dirP, string Carrera, string codigo)
+        public Persona(string nameP, string mail, string dirP)
         {
             this.nameP = nameP;
             this.mail = mail;
