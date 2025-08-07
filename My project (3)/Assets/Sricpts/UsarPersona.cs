@@ -1,5 +1,6 @@
 using PackagePersona;
 using UnityEngine;
+using TMPro;
 
 public class UsarPersona : MonoBehaviour
 {
