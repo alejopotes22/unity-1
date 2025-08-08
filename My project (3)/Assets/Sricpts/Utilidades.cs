@@ -31,7 +31,7 @@ public class Utilidades : MonoBehaviour
         paquete.contenido = estudiantes;
 
         string jsonFinal = JsonUtility.ToJson(paquete, true);
-        string destino = Application.persistentDataPath + "/" + archivoSalida;
+        string destino = Application.streamingAssetsPath + "/" + archivoSalida;
 
         File.WriteAllText(destino, jsonFinal);
         Debug.Log("Archivo guardado en: " + destino);
@@ -43,7 +43,7 @@ public class Utilidades : MonoBehaviour
         paquete.datos = puntos2D;
 
         string jsonFinal = JsonUtility.ToJson(paquete, true);
-        string destino = Application.persistentDataPath + "/" + archivoSalida;
+        string destino = Application.streamingAssetsPath + "/" + archivoSalida;
 
         File.WriteAllText(destino, jsonFinal);
         Debug.Log("Archivo guardado en: " + destino);
