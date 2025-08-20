@@ -1,33 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace PackagePersona
 {
     [Serializable]
     public class Estudiante : Persona
     {
-
-        [SerializeField] private string codeE;
-        [SerializeField] private string nameCarrera;
+        [SerializeField]
+        public string codeE;
+        [SerializeField]
+        public string nameCarrera;
 
         public Estudiante()
         {
         }
 
-        public Estudiante(string codeE, string nameCarrera, string nameP, string mail, string dirP)
-        : base(nameP, mail, dirP)
+        public Estudiante(string codeE, string nameCarrera, string nameP, string mailP, string dirP)
+        : base(nameP, mailP, dirP)
         {
 
             this.codeE = codeE;
             this.nameCarrera = nameCarrera;
-
         }
 
-        public string Codigo { get => codeE; set => codeE = value; }
-        public string Carrera { get => nameCarrera; set => nameCarrera = value; }
+        public string CodeE { get => codeE; set => codeE = value; }
+        public string NameCarrera { get => nameCarrera; set => nameCarrera = value; }
     }
-
 }
-

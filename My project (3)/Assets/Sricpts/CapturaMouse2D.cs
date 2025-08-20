@@ -1,42 +1,52 @@
-using Packages2D;
-using UnityEngine;
-using UnityEngine.UI; // O TMPro si usas TextMeshPro
-using UnityEngine.EventSystems;
-using TMPro;
+ï»¿//using PackagePersona;
+//using Packages;
+//using System.Collections.Generic;
+//using System.IO;
+//using UnityEngine;
+//using UnityEngine.EventSystems;
+//using UnityEngine.UI;
 
-public class CapturaMouse2D : MonoBehaviour
-{
-    public RectTransform panelComponente2; // Asigna el panel desde el inspector
-    public TMPro.TextMeshProUGUI textoCoordenadas;
-    private Vector2 ultimaCoordenada;
+//public class MouseOverPanel : MonoBehaviour
+//{
+//    public RectTransform panelRojo; // Asigna aquï¿½ tu panel rojo (RectTransform)
+//    List<Punto2D> puntos = new List<Punto2D>();
 
-    void Update()
-    {
-        if (panelComponente2 != null &&
-            RectTransformUtility.RectangleContainsScreenPoint(panelComponente2, Input.mousePosition, null))
-        {
-            Vector3 mouseScreen = Input.mousePosition;
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouseScreen);
+//    public void Start()
+//    {
 
-            ultimaCoordenada = new Vector2(mouseWorld.x, mouseWorld.y);
+//    }
 
-            if (textoCoordenadas != null)
-                textoCoordenadas.text = $"X: {ultimaCoordenada.x:F2}, Y: {ultimaCoordenada.y:F2}";
-        }
-        else
-        {
-            if (textoCoordenadas != null)
-                textoCoordenadas.text = "";
-        }
-    }
+//    void Update()
+//    {
+//        Vector2 localMousePos;
 
-    // Este método lo llamas desde el botón
-    public void GuardarUltimaCoordenada()
-    {
-        // Guardar solo si hay una coordenada válida
-        Puntos2D punto = new Puntos2D(ultimaCoordenada.x, ultimaCoordenada.y);
-        Utilidades.puntos2D.Add(punto);
-        Utilidades.ExportarCoordenadas("ultima_coordenada.json");
-        Debug.Log("Coordenada guardada: " + punto.X + ", " + punto.Y);
-    }
-}
+//        // Verifica si el mouse estï¿½ sobre el panel
+//        if (RectTransformUtility.RectangleContainsScreenPoint(panelRojo, Input.mousePosition))
+//        {
+//            // Convierte a coordenadas locales del panel
+//            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+//                panelRojo,
+//                Input.mousePosition,
+//                null, // o Camera.main si el Canvas estï¿½ en Screen Space - Camera
+//                out localMousePos
+//            );
+
+//            Punto2D punto2D = new Punto2D(localMousePos.x, localMousePos.y);
+//            puntos.Add(punto2D);
+
+
+
+//            //Debug.Log(" Mouse sobre panel rojo. Pos local: " + localMousePos.x);
+//            //Debug.Log(" Mouse sobre panel rojo. Pos local: " + localMousePos);
+//        }
+
+
+//    }
+//    public void saveDataPuntos()
+//    {
+//        Utilidades.SaveDataPuntos(puntos);
+//    }
+
+
+
+//}

@@ -1,31 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using System;
+//using UnityEngine;
 
-namespace Packages2D{
+//[Serializable]
+//public class Punto2D
+//{
+//    [SerializeField]
+//    public float x;
+//    [SerializeField]
+//    public float y;
 
-    [Serializable]
-    public class Puntos2D
-    {
-        [SerializeField] private double x;
-        [SerializeField] private double y;
+//    public Punto2D()
+//    {
+//    }
 
-        public Puntos2D(double x, double y)
-        {
-            X = x;
-            Y = y;
+//    public Punto2D(float x, float y)
+//    {
+//        this.x = x;
+//        this.y = y;
+//    }
 
-        }
-
-        public Puntos2D()
-        {
-
-
-
-        }
-
-        public double X { get => x; set => x = value; }
-        public double Y { get => y; set => y = value; }
-    }
-}
+//    public float X { get => x; set => x = value; }
+//    public float Y { get => y; set => y = value; }
+//}
