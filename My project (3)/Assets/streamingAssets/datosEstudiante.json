@@ -1,6 +1,13 @@
 {
     "estudiantes": [
         {
+            "nameP": "ddd",
+            "mailP": "ddd",
+            "dirP": "ddd",
+            "codeE": "dd",
+            "nameCarrera": "ddd"
+        },
+        {
             "nameP": "David Castro",
             "mailP": "dacastro@uao.edu.co",
             "dirP": "calle45",
@@ -139,6 +146,13 @@
             "dirP": "avenida9#67-89",
             "codeE": "21497",
             "nameCarrera": "Administración de Empresas"
+        },
+        {
+            "nameP": "ddd",
+            "mailP": "ddd",
+            "dirP": "ddd",
+            "codeE": "dd",
+            "nameCarrera": "ddd"
         }
     ]
 }

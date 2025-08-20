@@ -13,6 +13,7 @@ public class UsarPersona : MonoBehaviour
     public TMP_InputField dirStudent;
     public TMP_InputField CodeStudent;
     public TMP_InputField carreraStudent;
+    public TMP_InputField Positionstudent;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -89,7 +90,7 @@ public class UsarPersona : MonoBehaviour
 
         Utilidades.Savedatosestudiantes(listaE);
         Utilidades.SaveOtrasCarreras(listaE);
-        Utilidades.SaveIngenieria(listaE);  
+        Utilidades.SaveIngenieria(listaE);
     }
 
     public List<Estudiante> GetIngenieriaList()
@@ -140,8 +141,69 @@ public class UsarPersona : MonoBehaviour
     }
 
 
+    public void AddStudentAtSpecificPosition()
+    {
+        try
+        {
+            // Obtener los datos del estudiante desde los InputFields
+            string nameStudent1 = nameStudent.text;
+            string mailStudent1 = mailStudent.text;
+            string dirStudent1 = dirStudent.text;
+            string codeStudent1 = CodeStudent.text;
+            string carreraS1 = carreraStudent.text;
+
+            // Crear el nuevo estudiante
+            Estudiante nuevo = new Estudiante(codeStudent1, carreraS1,
+               nameStudent1, mailStudent1, dirStudent1);
+
+            // Convertir el input de Positionstudent a entero (la posición en la lista)
+            int pos;
+            if (int.TryParse(Positionstudent.text, out pos))
+            {
+                if (pos >= 0 && pos <= listaE.Count)
+                {
+                    // Insertar el estudiante en la posición indicada
+                    listaE.Insert(pos, nuevo);
+                    Debug.Log($"✅ Estudiante agregado en posición {pos}");
+
+                    // Guardar la lista actualizada en el archivo
+                    Utilidades.Savedatosestudiantes(listaE);
+                }
+                else
+                {
+                    Debug.LogWarning("⚠️ Posición fuera de rango");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("⚠️ La posición ingresada no es válida");
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("❌ Error al agregar estudiante en posición: " + e.Message);
+        }
+    }
 
 
+
+    public void AgregarAlInicio()
+    {
+        string nameStudent1 = nameStudent.text;
+        string mailStudent1 = mailStudent.text;
+        string dirStudent1 = dirStudent.text;
+        string codeStudent1 = CodeStudent.text;
+        string carreraS1 = carreraStudent.text;
+
+        Estudiante estudiante = new Estudiante(codeStudent1, carreraS1,
+            nameStudent1, mailStudent1, dirStudent1);
+
+        listaE.Insert(0, estudiante);
+
+        Debug.Log("Estudiante agregado al inicio de la lista: " + estudiante.NameP + "agregado al inicio de la lista");
+
+
+    }
 
 
 

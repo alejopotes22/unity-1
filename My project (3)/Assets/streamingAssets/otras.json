@@ -1,6 +1,13 @@
 {
     "estudiantes": [
         {
+            "nameP": "ddd",
+            "mailP": "ddd",
+            "dirP": "ddd",
+            "codeE": "dd",
+            "nameCarrera": "ddd"
+        },
+        {
             "nameP": "Carlos Pérez",
             "mailP": "cperez@uao.edu.co",
             "dirP": "avenida3#45-67",
@@ -48,6 +55,13 @@
             "dirP": "avenida9#67-89",
             "codeE": "21497",
             "nameCarrera": "Administración de Empresas"
+        },
+        {
+            "nameP": "ddd",
+            "mailP": "ddd",
+            "dirP": "ddd",
+            "codeE": "dd",
+            "nameCarrera": "ddd"
         }
     ]
 }
